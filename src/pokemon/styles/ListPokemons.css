@@ -1,0 +1,47 @@
+.card {
+    margin-top: 20px;
+}
+
+.card img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 125px;
+    width: 125px;
+}
+
+.card-body {
+    display: inline-block;
+    text-align: center;
+}
+
+.nextPage {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.nextPage button {
+    width: 70px;
+    height: 45px;
+}
+
+/*search*/
+
+.search-pokemon {
+    padding-top: 25px;
+}
+
+.input-group {
+    height: 50px;
+}
+
+.input-group button {
+    width: 20%;
+    color: blueviolet;
+    border-color: blueviolet;
+}
+
+.input-group button:hover {
+    background-color: blueviolet;
+    color: white;
+}
