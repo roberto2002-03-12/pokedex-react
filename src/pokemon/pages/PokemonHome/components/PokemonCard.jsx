@@ -2,8 +2,6 @@ import { memo } from 'react';
 import { Link } from 'react-router-dom';
 
 export const PokemonCard = memo(({name, url}) => {
-    console.log('Carta pokemon');
-
     return (
         <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
             <div className="card">

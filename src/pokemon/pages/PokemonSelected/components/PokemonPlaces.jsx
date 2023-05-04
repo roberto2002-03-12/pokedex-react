@@ -13,7 +13,7 @@ export const PokemonPlaces = ({places = []}) => {
                             <div className="content-places">
                                 {
                                     place.versions.map(version => (
-                                        <div className="pokemon-places-versions">
+                                        <div className="pokemon-places-versions" key={version}>
                                             {version}
                                         </div>
                                     ))

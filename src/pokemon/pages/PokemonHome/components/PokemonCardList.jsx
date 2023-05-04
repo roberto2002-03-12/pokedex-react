@@ -6,7 +6,6 @@ import { useLocation } from "react-router-dom";
 import queryString from 'query-string';
 
 export const PokemonCardList = memo(() => {
-    console.log('Lista de carta');
     const { startLoadingPokemons, setNextPage, setPrevPage, startSearchingPokemonBar } = usePokemon();
     const { pokemons } = useSelector(state => state.pokemon);
     const location = useLocation();

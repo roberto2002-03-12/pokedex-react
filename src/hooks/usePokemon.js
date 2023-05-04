@@ -2,6 +2,7 @@ import { pokeApi } from '../api';
 import { useDispatch } from 'react-redux';
 import { onLoadPokemons, onSetActivePokemon, onSetSearchedPokemon, onSetPlacesPokemon } from '../store/pokemon/pokemonSlice';
 import { getImageFromUrl } from '../helpers/getImageFromUrl';
+import Swal from 'sweetalert2';
 
 export const usePokemon = () => {
     const dispatch = useDispatch();
@@ -32,8 +33,7 @@ export const usePokemon = () => {
             const array = getImageFromUrl(results.data.results);
             dispatch(onLoadPokemons(array));
         } catch (err) {
-            console.log('Error en cargar pokemones');
-            console.log(err);
+            Swal.fire('Error en cargar pokemones', 'Sucedio un error con la api', 'error');
         };
     };
 
@@ -51,14 +51,12 @@ export const usePokemon = () => {
 
             dispatch(onSetPlacesPokemon(newData));
         } catch (err) {
-            console.log('error al encontrar lugar')
-            console.log(err);
+            Swal.fire('No se logró encontrar los lugares', 'Al paracer hubo un error con la api', 'error');
         }
     };
 
     const startSearchingPokemon = async (name) => {
         try {
-            console.log('solicitando datos')
             const results = await pokeApi.get(`pokemon/${name}`);
             const arrayStats = results.data.stats;
             const arrayAbilities = results.data.abilities;
@@ -92,8 +90,7 @@ export const usePokemon = () => {
             dispatch(onSetSearchedPokemon(newData));
             await startSearchingPlaces(newData.id);
         } catch (err) {
-            console.log('Error en cargar pokemones');
-            console.log(err);
+            Swal.fire('Error en cargar pokemones', 'Sucedio un error con la api de pokemon', 'error');
             dispatch(onSetSearchedPokemon(false));
         };
     };
@@ -110,8 +107,7 @@ export const usePokemon = () => {
 
             dispatch(onLoadPokemons(data));
         } catch (err) {
-            console.log('Error en el buscador de poemones');
-            console.log(err);
+            Swal.fire('Error al buscar pokemones', 'Sucedio un error con poke api o el pokemon no existe', 'error')
         };
     };
 
