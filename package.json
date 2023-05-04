@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": ".",
+  "homepage": "http://roberto2002-03-12.github.io/pokedex-react",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
